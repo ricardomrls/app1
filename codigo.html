@@ -1,0 +1,80 @@
+<html>
+    <head>
+    <title>Calculadora</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width-device-width, user-scalable=no">
+        <link href="estilos.css" rel="stylesheet" type="text/css">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+    
+    </head>
+    
+    <body>
+        <h1>Sección Secreta</h1>
+        <p>Escribe el contenido de tu acordeón en el siguiente recuadro:</p>
+        <textarea placeholder="Tu acordeón aquí" id="a"></textarea>
+        <button onclick="guardar()">Guardar</button>
+    </body>
+    
+    <script>
+    window.addEventListener('load',cargar,true);
+        function cargar(){
+            if(localStorage.getItem('acordeon')){
+                acordeonGuardado=localStorage.getItem('acordeon');
+                document.getElementById('a').value=acordeonGuardado;
+            }
+        }
+            function guardar(){
+                acordeon = document.getElementById('a').value;
+                //Local Storage
+                //Almacenamiento local en el navegador.
+                //El objeto "LocalStorage" tiene el medodo "SetItem" que recibe
+                //Dos argumentos, el primero es el nombre de la variable o la llave
+                //el segundo es el valor que se guardará
+                localStorage.setItem('acordeon', acordeon),
+                    window.location.assign('index.html')
+            }
+    </script>
+    
+    <style>
+        h1{
+            text-align: center;
+            color: rgba(255,255,255,.7);
+            font-family: 'Segoe UI', 'Arial', 'sans-serif';
+            font-weight: normal;
+            margin: 10px 0px;
+            font-size: 2em;
+            
+        }
+        p{
+           text-align: center;
+            color: rgba(255,255,255,.5);
+            font-family: 'Segoe UI', 'Arial', 'sans-serif';
+            
+            margin: 10px 30px;
+            
+        
+        }
+        textarea{
+            width:90%;
+            margin-left: 5%;
+            font-size: 1em;
+            font-family: 'Segoe UI', 'Arial', 'Sans-serif';
+            background: rgba(0,0,0,.3);
+            border: none;
+            border-radius: 10px;
+            height: 50%;
+            padding: 10px;
+            outline: none;
+            color: rgba(255,255,255,.7)
+        }
+        button{
+            width: 50%;
+            height: 40px;
+            background: rgba(255,255,255,.6);
+            font-size: 1.3em;
+            margin-left: 25%;
+            margin-top: 20px;
+            color: rgba(0,0,0,.8);
+            border-radius: 5px;
+        }
+    </style>

@@ -1,0 +1,49 @@
+<html>
+    <head>
+    <title>Calculadora</title>
+        <meta charset="utf-8">
+        <link href="estilos.css" rel="stylesheet"
+              type="text/css">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+    
+    </head>
+    <body class="bg1">
+        <div class="content">
+    <div class="content">
+        <div class="display"></div>
+        <input type="hidden" value="" class="outcome" id="pantalla" />
+        <ul class="buttons">
+            
+            <li><a>7</a></li>
+            <li><a>8</a></li>
+            <li><a>9</a></li>
+            <li><a>+</a></li>
+            <li><a>4</a></li>
+            <li><a>5</a></li>
+            <li><a>6</a></li>
+            <li><a>-</a></li>
+            <li><a>1</a></li>
+            <li onclick="agregar('2')"><a>2</a></li>
+            <li><a>3</a></li>
+            <li><a>*</a></li>
+            <li onclick="borrar()"><a>C</a></li>
+            <li><a>0</a></li>
+            <li><a>.</a></li>
+            <li><a>=</a>
+            </li>
+        </ul>
+    </div>
+</div>
+    </body>
+</html>
+
+
+<script>
+
+    function agregar(caracter){
+        document.getElementById('content').value+=caracter;
+    }
+    function borrar(){
+        document.getElementById('content').values"";
+    }
+</script>
